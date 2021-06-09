@@ -12,5 +12,7 @@ public class PersonExercisesDto {
     private Long idPerson;
     private Long idTraining;
     private String titleTraining;
-    private String date;
+    private Integer day;
+    private Integer month;
+    private Integer year;
 }

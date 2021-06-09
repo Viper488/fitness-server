@@ -52,8 +52,11 @@ CREATE TABLE person (
     id INTEGER PRIMARY KEY NOT NULL,
     name VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
-    bmi FLOAT NOT NULL
+    height DOUBLE NOT NULL,
+    weight DOUBLE NOT NULL
 );
+
+INSERT INTO person VALUES(1, 'admin', 'admin', 173, 78);
 
 DROP TABLE IF EXISTS person_exercise;
 
@@ -61,5 +64,7 @@ CREATE TABLE person_exercise (
     id_person INTEGER NOT NULL,
     id_training INTEGER NOT NULL,
     title_training VARCHAR NOT NULL,
-    date VARCHAR
+    day INTEGER NOT NULL,
+    month INTEGER NOT NULL,
+    year INTEGER NOT NULL
 );

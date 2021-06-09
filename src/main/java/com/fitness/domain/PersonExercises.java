@@ -24,15 +24,21 @@ class PersonExercises {
     private Long idTraining;
     @Column(name = "title_training")
     private String titleTraining;
-    @Column(name = "date")
-    private String date;
+    @Column(name = "day")
+    private Integer day;
+    @Column(name = "month")
+    private Integer month;
+    @Column(name = "year")
+    private Integer year;
 
     PersonExercisesDto dto() {
         return PersonExercisesDto.builder()
                 .idPerson(this.idPerson)
                 .idTraining(this.idTraining)
                 .titleTraining(this.titleTraining)
-                .date(this.date)
+                .day(this.day)
+                .month(this.month)
+                .year(this.year)
                 .build();
     }
 }

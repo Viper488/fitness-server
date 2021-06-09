@@ -1,13 +1,12 @@
 package com.fitness.domain;
 
-import com.fitness.dto.ExerciseDto;
-import com.fitness.dto.ExercisesDto;
-import com.fitness.dto.TrainingExercisesDto;
-import com.fitness.dto.TrainingsDto;
+import com.fitness.dto.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,10 @@ public class FitnessFacade {
     private final TrainingsRepository trainingsRepository;
     private final ExercisesRepository exercisesRepository;
 
-    FitnessFacade(PersonRepository personRepository, PersonExercisesRepository personExercisesRepository, TrainingsRepository trainingsRepository, ExercisesRepository exercisesRepository) {
+    FitnessFacade(PersonRepository personRepository,
+                  PersonExercisesRepository personExercisesRepository,
+                  TrainingsRepository trainingsRepository,
+                  ExercisesRepository exercisesRepository) {
         this.personRepository = personRepository;
         this.personExercisesRepository = personExercisesRepository;
         this.trainingsRepository = trainingsRepository;
@@ -52,5 +54,9 @@ public class FitnessFacade {
                 .title(trainingsDto.getTitle())
                 .exercises(exercise)
                 .build();
+    }
+
+    public double calculateBmi(double height, double weight) {
+        return weight / Math.pow(height/100,2);
     }
 }

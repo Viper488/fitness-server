@@ -24,15 +24,18 @@ class Person {
     private String name;
     @Column(name = "password")
     private String password;
-    @Column(name = "bmi")
-    private float bmi;
+    @Column(name = "height")
+    private double height;
+    @Column(name = "weight")
+    private double weight;
 
     PersonDto dto() {
         return PersonDto.builder()
                 .id(this.id)
                 .name(this.name)
                 .password(this.password)
-                .bmi(this.bmi)
+                .height(this.height)
+                .weight(this.weight)
                 .build();
     }
 }
