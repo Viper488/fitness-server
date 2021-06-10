@@ -8,7 +8,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class TrainingsDto {
+public class TrainingDto {
     private Long id;
     private String title;
     private String image;

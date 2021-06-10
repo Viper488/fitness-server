@@ -1,6 +1,6 @@
 package com.fitness.domain;
 
-import com.fitness.dto.PersonExercisesDto;
+import com.fitness.dto.PersonTrainingDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -15,8 +15,8 @@ import javax.persistence.Table;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "person_exercise")
-class PersonExercises {
+@Table(name = "person_training")
+class PersonTraining {
     @Id
     @Column(name = "id_person")
     private Long idPerson;
@@ -31,8 +31,8 @@ class PersonExercises {
     @Column(name = "year")
     private Integer year;
 
-    PersonExercisesDto dto() {
-        return PersonExercisesDto.builder()
+    PersonTrainingDto dto() {
+        return PersonTrainingDto.builder()
                 .idPerson(this.idPerson)
                 .idTraining(this.idTraining)
                 .titleTraining(this.titleTraining)

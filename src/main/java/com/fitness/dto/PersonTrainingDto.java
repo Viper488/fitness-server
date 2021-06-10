@@ -8,7 +8,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonExercisesDto {
+public class PersonTrainingDto {
     private Long idPerson;
     private Long idTraining;
     private String titleTraining;

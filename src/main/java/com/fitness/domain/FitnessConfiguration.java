@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Configuration;
 class FitnessConfiguration {
     @Bean
     FitnessFacade fitnessFacade(PersonRepository personRepository,
-                                PersonExercisesRepository personExercisesRepository,
-                                TrainingsRepository trainingsRepository,
+                                PersonTrainingRepository personTrainingRepository,
+                                TrainingRepository trainingsRepository,
                                 ExercisesRepository exercisesRepository) {
         return new FitnessFacade(
                 personRepository,
-                personExercisesRepository,
+                personTrainingRepository,
                 trainingsRepository,
                 exercisesRepository
         );

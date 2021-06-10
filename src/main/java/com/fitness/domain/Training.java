@@ -1,6 +1,6 @@
 package com.fitness.domain;
 
-import com.fitness.dto.TrainingsDto;
+import com.fitness.dto.TrainingDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "trainings")
-class Trainings {
+class Training {
     @Id
     @Column(name = "id")
     private Long id;
@@ -25,8 +25,8 @@ class Trainings {
     @Column(name = "img")
     private String image;
 
-    TrainingsDto dto() {
-        return TrainingsDto.builder()
+    TrainingDto dto() {
+        return TrainingDto.builder()
                 .id(this.id)
                 .title(this.title)
                 .image(this.image)
