@@ -17,11 +17,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "person_training")
 class PersonTraining {
+
     @Id
-    @Column(name = "id_person")
-    private Long idPerson;
     @Column(name = "id_training")
     private Long idTraining;
+    @Column(name = "id_person")
+    private Long idPerson;
     @Column(name = "title_training")
     private String titleTraining;
     @Column(name = "day")

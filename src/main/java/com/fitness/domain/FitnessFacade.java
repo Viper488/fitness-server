@@ -75,7 +75,14 @@ public class FitnessFacade {
     public void savePersonTraining(Long idPerson, Long idTraining){
         TrainingDto trainingDto = trainingRepository.findTrainingById(idTraining).dto();
         LocalDateTime now = LocalDateTime.now();
-        PersonTraining personTrainingDto = new PersonTraining(idPerson, idTraining, trainingDto.getTitle(), now.getDayOfMonth(), now.getMonthValue() + 1, now.getYear());
-        personTrainingRepository.save(personTrainingDto);
+
+        personTrainingRepository.save(PersonTraining.builder()
+                .idPerson(idPerson)
+                .idTraining(idTraining)
+                .titleTraining(trainingDto.getTitle())
+                .day(now.getDayOfMonth())
+                .month(now.getMonthValue() + 1)
+                .year(now.getYear())
+                .build());
     }
 }
